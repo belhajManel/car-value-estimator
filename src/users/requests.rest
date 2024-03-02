@@ -19,6 +19,9 @@ Content-Type: application/json
 ### get current user info
 GET http://localhost:3000/auth/whoami
 
+### sign out
+POST http://localhost:3000/auth/signout
+
 ### Find a user by id
 GET http://localhost:3000/auth/2
 

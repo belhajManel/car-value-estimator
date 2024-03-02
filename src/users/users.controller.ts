@@ -10,6 +10,8 @@ import {
   UseInterceptors,
   NotFoundException,
   Session,
+  HttpCode,
+  HttpStatus,
 } from '@nestjs/common';
 import { CreateUserDto } from './dtos/create-user.dto';
 import { UsersService } from './users.service';
@@ -46,6 +48,12 @@ export class UsersController {
   @Get('whoami')
   whoAmI(@Session() session: any) {
     return this.userService.findOne(session.userId);
+  }
+
+  @HttpCode(HttpStatus.OK)
+  @Post('signout')
+  signOut(@Session() session: any) {
+    session.userId = null;
   }
 
   // @Serialize(UserDto)===> @UseInterceptors(new SerializeInterceptor(UserDto))
