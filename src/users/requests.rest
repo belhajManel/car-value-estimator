@@ -1,9 +1,9 @@
-### create a new user
+### sign up
 POST http://localhost:3000/auth/signup
 Content-Type: application/json
 
 {
-    "email": "blabla1@gmail.com",
+    "email": "blabla114@gmail.com",
     "password": "blabla"
 }
 
@@ -12,9 +12,12 @@ POST http://localhost:3000/auth/signin
 Content-Type: application/json
 
 {
-    "email": "blabla1@gmail.com",
+    "email": "blabla11@gmail.com",
     "password": "blabla"
 }
+
+### get current user info
+GET http://localhost:3000/auth/whoami
 
 ### Find a user by id
 GET http://localhost:3000/auth/2
