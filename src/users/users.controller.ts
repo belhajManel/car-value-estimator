@@ -12,6 +12,7 @@ import {
   Session,
   HttpCode,
   HttpStatus,
+  UseGuards,
 } from '@nestjs/common';
 import { CreateUserDto } from './dtos/create-user.dto';
 import { UsersService } from './users.service';
@@ -23,8 +24,10 @@ import {
 import { UserDto } from './dtos/user.dto';
 import { AuthService } from './auth.service';
 import { CurrentUser } from './decorators/current-user.decorator';
+import { AuthGuard } from 'src/guards/auth.guard';
 
 @Serialize(UserDto)
+@UseGuards(AuthGuard)
 @Controller('auth')
 export class UsersController {
   constructor(
