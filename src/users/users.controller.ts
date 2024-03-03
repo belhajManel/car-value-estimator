@@ -27,7 +27,6 @@ import { CurrentUser } from './decorators/current-user.decorator';
 import { AuthGuard } from 'src/guards/auth.guard';
 
 @Serialize(UserDto)
-@UseGuards(AuthGuard)
 @Controller('auth')
 export class UsersController {
   constructor(
@@ -55,6 +54,7 @@ export class UsersController {
   // }
 
   @Get('whoami')
+  @UseGuards(AuthGuard)
   whoAmI(@CurrentUser() user: any) {
     return user;
   }
