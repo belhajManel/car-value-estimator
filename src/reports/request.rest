@@ -13,9 +13,12 @@ Content-Type: application/json
 }
 
 ### 2. Make report approved
-PATCH http://localhost:3000/reports/1
+PATCH http://localhost:3000/reports/5
 Content-Type: application/json
 
 {
  "approved": true
 }
+
+### 3. Get estimated price for a car
+GET http://localhost:3000/reports?make=Toyota&model=Corolla&year=2015&mileage=10000&lng=0&lat=0
